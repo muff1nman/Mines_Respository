@@ -37,7 +37,36 @@ git config --global github.user Enter_your_github_username_here_without_quotatio
 git config --global github.token Enter_your_APItoken_here_"_"</p>
 <a name="Windows"> </a>
 <h2>Windows:</h2>
-<p>Insert Stuff here</p>
+<h4>Install the latest Git distribution.</h4> 
+<p>You can find an executable installer <a href="http://code.google.com/p/msysgit/downloads/list?can=3">here</a>. <br>
+Select the default options at every step. (Simply "Yes/Next" through everything)<br></p>
+<h4>Setup an SSH key</h4>
+<p>Open Git Bash<br><br>
+<code>$ cd ~/.ssh</code> 
+<br>(Changes the current directory to your ssh folder. This should fail. If it doesn't, you already have a key and can skip this section.)<br>
+<br><code>$ ssh-keygen -t rsa -C "Comment to identify this key"</code> 
+<br>(Your email makes a good identifying comment)<br><br>
+NOTE: When prompted for a file to save to, press enter without typing anything to choose the default.<br>
+NOTE: When prompted for a passphrase, choose something you can remember. Theoretically, you should choose something secure, but that's not a huge issue for our purposes.<br>
+</p>
+<h4>Add SSH public key to GitHub</h4>
+<p>Open Git GUI<br>
+Choose Help --> SSH Key
+If you don't see a key displayed in the window, press Generate Key and click through. (You should have generated a key previously)<br>
+Copy the block of text to your clipboard. <em>Do not</em> change the whitespace of the text.<br>
+Open your github account, and go to Account Settings, then SSH Keys.<br>
+Click on Add SSH Key, then paste the block of text from earlier.
+</p>
+<h4>Configure Identifying Local Variables</h4>
+<p>
+<code>$ git config --global user.name "Firstname Lastname"</code><br>
+(This will identify you on your commit tags)<br>
+<code>$ git config --global user.email "your_email@youremail.com"</code><br>
+(This will allow other git users to contact you with questions about your commits)<br>
+<code>$ git config --global github.user "username"</code><br>
+(This is your github login name<br>
+<code>$ git config --global github.token "0123456789yourf0123456789token"</code><br>
+(This can be found under your github Account Settings, under Account Settings on the left)<br>
 <a name="Mac"> </a>
 <h2>Mac:</h2>
 <p>Insert Stuff Here</p>
