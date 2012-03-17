@@ -1,0 +1,83 @@
+How does Git work?
+
+Git is a simple yet powerful version control system.  It keeps track of the modifications made to a project (usually code) and allows for multiple versions of the same project.  
+
+Example:
+
+Jim is working on some code 
+
+Jim starts out with this code in Driver.java: 
+
+public static main(){
+	Scanner read = new Scanner(System.in);
+	String firstName;
+	System.out.println("Please enter your first name");
+	firstName = read.next();
+}
+
+He then decides he wants their entire name including their last name.  So then the code becomes
+
+public static main(){
+	Scanner read = new Scanner(System.in);
+	String name;
+	System.out.println("Please enter your name");
+	name = read.nextLine();
+}
+
+He then invites Paul to help him out with some code and Paul makes these changes to also ask for an age
+
+public static main(){
+	Scanner read = new Scanner(System.in);
+	String name;
+	int age;
+	System.out.println("Please enter your name");
+	name = read.nextLine();
+	System.out.println("Please enter your age");
+	age = read.nextInt();
+}
+
+Jim then comes back to the code and is appalled that Paul would ask for an age (this code is used for job recruiters) so deletes everything and instead asks for a lucky number
+
+public static main(){
+	Scanner read = new Scanner(System.in);
+	String name;
+	int luckyNumber;
+	System.out.println("Please enter your name");
+	name = read.nextLine();
+	System.out.println("What is your lucky number");
+	luckyNumber = read.nextInt();
+}
+
+So in short two people have to share the same code that want to go different ways.  This is easily done with git branching.  
+
+Jim would start the same way but when Paul joins in, Paul makes a new branch for his own to work on.  
+
+<<<insert diagrams>>>
+
+Another cool git feature is that if Jim decided that asking for age was a good idea later on, the two could then merge their code together using the built in git-merge function.  
+
+<<<insert diagrams>>>
+
+So now some terminology:
+
+
+<<<define these definitions>>>
+commit
+stage
+branch
+repository
+merge
+working directory
+push/pull
+
+In Jim and Pauls case they will share the same repository (the collection of branches) and have separate branches.  When Jim is working on the code, his edited code is called the working directory.  It is separate from the repository.  Any changes to the working directory will not be reflected in the repository until Jim adds them to the staging area and then commits them to the repository.  Why are there two steps? ....
+
+A stage takes the working files and puts them in a separate place for checking over and comparing to the actual repository.  Comparing is done with git-diff.  This is handy so you can make sure you know exactly what is going to change once the staged code is commited.  
+
+<<<Insert and example with stage, commit, repository, etc>>>
+
+In our case we will have a shared repository on gitHub (an online code sharing place).  We will also have a local repository for each student on their own personal computers.  Ideally the local repository and the shared repository will always match but sadly it is not this simple.  
+
+When someone modifies their local repository (after a stage and commit), they can "push" their code to the remote repository.  Then the other person can see that same code by "pull"ing code from the remote repository to the local repository.  However this will overwrite their local repository and their working directory.  This becomes a problem when the other person does some modifications they would like to keep.  To handle this, the other person should 1) pull before modifing code and 2) use the fetch command with a diff command to compare the local repository to the remote repository so that they can then be merged and then the final result pushed to the remote repository.
+
+
