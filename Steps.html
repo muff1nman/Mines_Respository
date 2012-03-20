@@ -26,7 +26,7 @@ Fedora:<br>
 <p><code>git config --global user.name "Put your name here"<br>
 git config --global user.email "Put your Mines email here"</code></p>
 <h4>Setup an SSH key</h4>
-<p>In terminal run:<br>
+<p>First, make sure you don't already have SSH keys by checking to see if the directory <code>cd ~/.ssh</code> does not exist. If not, in the terminal run:<br>
 <code>ssh-keygen -t rsa -C "Comment to identify this key"</code>
 </p>
 <h4>Add SSH public key to GitHub</h4>
@@ -69,9 +69,26 @@ Run the following:<br><br>
 (This is your github login name)<br>
 <code>$ git config --global github.token "0123456789yourf0123456789token"</code><br>
 (This can be found under your github Account Settings, under Account Settings on the left)<br>
+
 <a name="Mac"> </a>
 <h2>Mac:</h2>
-<p>Insert Stuff Here</p>
+<h4>Install the latest Git distribution</h4>
+<p>You can find an installer <a href="http://git-scm.com/">here</a>. <br>
+Select the default options at every step. (Simply "Yes/Next" through everything)<br></p>
+<h4>Setup your personal info that you will be identified by in the respository</h4>
+<p><code>git config --global user.name "Put your name here"<br>
+git config --global user.email "Put your Mines email here"</code></p>
+<h4>Setup an SSH key</h4>
+<p>First, make sure you don't already have SSH keys by checking to see if the directory <code>cd ~/.ssh</code> does not exist. If not, in the terminal run:<br>
+<code>ssh-keygen -t rsa -C "Comment to identify this key"</code>
+</p>
+<h4>Add SSH public key to GitHub</h4>
+<p>Copy the contents of id_rsa.pub and paste them into gitHub under Account Settings > SSH Keys > Add SSH key where it says Key</p>
+<h4>Setup gitHub token</h4>
+<p>Go to github and click on account settings and then the tab account settings.  Find the API token and using this token execute these commands<br>
+<code>git config --global github.user Enter_your_github_username_here_without_quotations<br>
+git config --global github.token Enter_your_APItoken_here_"_"</code></p>
+
 <h1>Step 2: Create Local Clone of the Repository</h1>
 <h2>With Git GUI</h2>
 <p>
