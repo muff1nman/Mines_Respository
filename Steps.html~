@@ -5,7 +5,7 @@
 <title></title>
 </head>
 <body>
-<h1>Step 1: Setup Git</h1>
+<h1>Setup Git</h1>
 <p>
 For additional help and pictures take a look <a href="http://help.github.com/set-up-git-redirect" name="http://help.github.com/set-up-git-redirect">here</a>.
 </p>
@@ -72,22 +72,6 @@ Run the following:<br><br>
 <a name="Mac"> </a>
 <h2>Mac:</h2>
 <p>Insert Stuff Here</p>
-<h1>Step 2: Create Local Clone of the Repository</h1>
-<h2>With Git GUI</h2>
-<p>
-Select Remote -> Add Remote from the menu.<br>
-<br>
-<b>Name:</b> What you want to name the repository on your local machine. Recommended that you keep the repository name the same.<br>
-<b>Location:</b> URI of the remote repository. Should be of the form <code>git@github.com:DirectoryAddressWithSomeSlashesMaybe.git</code><br>
-<br>
-Unless you have reason not to, leave "Fetch Immediately" selected so you get all the files on the repository.<br>
-<br>
-The repository will now be open in the GUI window. When you start the GUI again, you will have re-open the repository. (It will probably show up as a "Recent Repository," however)<br>
-</p>
-<h2>With Terminal</h2>
-<p>
-Insert Stuff Here
-</p>
-<br>
+</body>
 </body>
 </html>
