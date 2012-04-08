@@ -80,9 +80,26 @@ Jim would start the same way but when Paul joins in, Paul makes a new branch for
 Another cool git feature is that if Jim decided that asking for age was a good idea later on, the two could then merge their code together using the built in git-merge function.  </br></br>
 
 <img src="JimPaulP2.png"></p>
-
+<br><br><br><br><br>
 <h2>Terminology</h2>
 
+First, a visual representation of the various stages of the Git system:<br><br>
 
+<img src="http://osteele.com/images/2008/git-transport.png"><br><br>
+
+As shown above, there are four stages in the Git system:
+
+<dl>
+<dt>Workspace</dt> <dd>The most volatile position in the system. All of your minute-to-minute edits go here automatically.</dd>
+<dt>Index</dt> <dd>Useful for periodically backing up stable changes that don't yet satisfy your intended goal for a given checkout, but you can use it for any checkpoint state you like (even unstable ones).</dd>
+<dt>Local Repository</dt> <dd>The local repository stores revision states, like the index, but also tracks a branch head. (What a branch and a head are will be explained shortly)</dd>
+<dt>Remote Repository</dt> <dd>The remote repository behaves very similarly to the local one, except that it is accessible to other users. It is often used for sharing important revision states (e.g., stable revision 1.0, 1.1, etc.)</dd>
+</dl>
+<br>
+In addition to these locations, you should also know:
+<dl>
+<dt>Commit</dt> <dd>A command to move changes from the workspace to the Local Repository. Adding the -a argument also calls <code>add</code>, updating the index to match.</dd>
+<dt>Push</dt> <dd>A command to move changes from the Local Repository to a specified Remote Repository. If no directory is specified, the current remote will be used. (For this class, it is unlikely a given local repository on your machine will have more than one remote)</dd>
+<dt>Pull</dt> <dd>A command to overwrite a specified branch in the Local Repository with the contents of a specified remote repository.<br>Syntax: <code>git pull [REMOTE_NAME] [BRANCH_NAME]</code></dd>
 
 </html>
