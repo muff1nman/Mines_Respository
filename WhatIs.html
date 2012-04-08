@@ -101,5 +101,23 @@ In addition to these locations, you should also know:
 <dt>Commit</dt> <dd>A command to move changes from the workspace to the Local Repository. Adding the -a argument also calls <code>add</code>, updating the index to match.</dd>
 <dt>Push</dt> <dd>A command to move changes from the Local Repository to a specified Remote Repository. If no directory is specified, the current remote will be used. (For this class, it is unlikely a given local repository on your machine will have more than one remote)</dd>
 <dt>Pull</dt> <dd>A command to overwrite a specified branch in the Local Repository with the contents of a specified remote repository.<br>Syntax: <code>git pull [REMOTE_NAME] [BRANCH_NAME]</code></dd>
+<dt>Repository</dt> <dd>?</dd>
+<dt>Branch</dt> <dd>?</dd>
+<dt>Merge</dt> <dd>?</dd>
+<dt>Stage</dt> <dd>?</dd>
+<dt>Working Directory</dt> <dd>?</dd>
+</dl>
+
+In Jim and Pauls case they will share the same repository (the collection of branches) and have separate branches.  When Jim is working on the code, his edited code is called the working directory.  It is separate from the repository.  Any changes to the working directory will not be reflected in the repository until Jim adds them to the staging area and then commits them to the repository.  Why are there two steps? ....<br><br>
+
+A stage takes the working files and puts them in a separate place for checking over and comparing to the actual repository.  Comparing is done with git-diff.  This is handy so you can make sure you know exactly what is going to change once the staged code is commited.<br><br>
+
+[[[Insert an example with stage, commit, repository, etc]]]<br><br>
+
+In our case we will have a shared repository on gitHub (an online code sharing place).  We will also have a local repository for each student on their own personal computers.  Ideally the local repository and the shared repository will always match but sadly it is not this simple. <br><br> 
+
+When someone modifies their local repository (after a stage and commit), they can "push" their code to the remote repository.  Then the other person can see that same code by "pull"ing code from the remote repository to the local repository.  However this will overwrite their local repository and their working directory.  This becomes a problem when the other person does some modifications they would like to keep.  To handle this, the other person should 1) pull before modifing code and 2) use the fetch command with a diff command to compare the local repository to the remote repository so that they can then be merged and then the final result pushed to the remote repository.<br><br>
+
+[[[Insert summary of workflow, as a list of commands edits]]]
 
 </html>
