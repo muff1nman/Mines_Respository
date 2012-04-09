@@ -1,0 +1,18 @@
+    (2) Powerpoint explanation of distributed version control in general and git specifically.
+
+	DVCS info needs to be gathered. Git explanation in GitAbout.txt and WhatIs.html
+
+
+    (2) html file with anything the students need to know to start using git (e.g., installation instructions, tips, etc.)
+
+	Complete
+
+
+    (3) html or powerpoint on using git with Eclipse.
+
+	Not started. Should be an easy job with PP, since it would amount to "Here's you use Git. Don't bother with EGit."
+
+
+    (3) html file with a getting to know git exercise.
+
+	Not started. Can copy the getting to know SVN exercise.
