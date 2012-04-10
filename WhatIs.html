@@ -98,26 +98,32 @@ As shown above, there are four stages in the Git system:
 <br>
 In addition to these locations, you should also know:
 <dl>
-<dt>Commit</dt> <dd>A command to move changes from the workspace to the Local Repository. Adding the -a argument also calls <code>add</code>, updating the index to match.</dd>
+<dt>Commit</dt> <dd>A command to move changes from the workspace to the Local Repository. Adding the -a argument also calls <code>add</code>, updating the index to match. Also refers to a singular state of the entire collection of tracked files.</dd>
 <dt>Push</dt> <dd>A command to move changes from the Local Repository to a specified Remote Repository. If no directory is specified, the current remote will be used. (For this class, it is unlikely a given local repository on your machine will have more than one remote)</dd>
 <dt>Pull</dt> <dd>A command to overwrite a specified branch in the Local Repository with the contents of a specified remote repository.<br>Syntax: <code>git pull [REMOTE_NAME] [BRANCH_NAME]</code></dd>
-<dt>Repository</dt> <dd>?</dd>
-<dt>Branch</dt> <dd>?</dd>
-<dt>Merge</dt> <dd>?</dd>
-<dt>Stage</dt> <dd>?</dd>
-<dt>Working Directory</dt> <dd>?</dd>
+<dt>Repository</dt> <dd>A folder on a filesystem which contains data (source files, reference docs, images, etc.) and metadata (version tracking, file listings, branch tracking). A single repository is self-contained; moving, renaming, or copying an entire repository (data and metadata) are all safe actions.</dd>
+<dt>Branch</dt> <dd>A series of commits. Also refers to the label which refers to the latest commit of the files on that branch.</dd>
+<dt>Merge</dt> <dd>Taking two files with different contents and either editing one of the files to include desired changes from the other, or creating a new file entirely with chosen changes from both. The method in which a file is editing to include changes is more often used in Git and other version control schemes.</dd>
+<dt>Stage</dt> <dd>Preparing changes made to files to be added to a commit, via the Index. Once a commit is made, all changes were Staged in the Index become a part of the latest commit, and the Index becomes effectively "empty."</dd>
+<dt>Working Directory</dt> <dd>All the files that are not part of the Git system and metadata. If you look at a Git repository once it is set up, the only part of it which is not the Working Directory is the (sometimes hidden) <code>.git</code> folder.</dd>
 </dl>
 
-In Jim and Pauls case they will share the same repository (the collection of branches) and have separate branches.  When Jim is working on the code, his edited code is called the working directory.  It is separate from the repository.  Any changes to the working directory will not be reflected in the repository until Jim adds them to the staging area and then commits them to the repository.  Why are there two steps? ....<br><br>
+In Jim and Paul's case they will share the same repository (the collection of branches) and have separate branches.  When Jim is working on the code, his edited code is called the working directory.  It is separate from the repository.  Any changes to the working directory will not be reflected in the repository until Jim adds them to the staging area and then commits them to the repository.  Why are there two steps? ....<br><br>
 
 A stage takes the working files and puts them in a separate place for checking over and comparing to the actual repository.  Comparing is done with git-diff.  This is handy so you can make sure you know exactly what is going to change once the staged code is commited.<br><br>
-
-[[[Insert an example with stage, commit, repository, etc]]]<br><br>
 
 In our case we will have a shared repository on gitHub (an online code sharing place).  We will also have a local repository for each student on their own personal computers.  Ideally the local repository and the shared repository will always match but sadly it is not this simple. <br><br> 
 
 When someone modifies their local repository (after a stage and commit), they can "push" their code to the remote repository.  Then the other person can see that same code by "pull"ing code from the remote repository to the local repository.  However this will overwrite their local repository and their working directory.  This becomes a problem when the other person does some modifications they would like to keep.  To handle this, the other person should 1) pull before modifing code and 2) use the fetch command with a diff command to compare the local repository to the remote repository so that they can then be merged and then the final result pushed to the remote repository.<br><br>
 
-[[[Insert summary of workflow, as a list of commands edits]]]
+Your workflow should look something like this:
+<ol>
+<li><code>fetch</code> from the remote repository to your local repository, to get the latest codebase.</li>
+<li><code>diff HEAD</code> to see if any changes were made on the remote repository since your last push.</li>
+<li>If necessary, merge changes into your workspace, or simply <code>checkout HEAD</code> to overwrite.</li>
+<li>Modify your workspace. (Write code, etc.)</li>
+<li>When you are ready to commit a set of changes, stage them to your Index with <code>add -u</code>, then commit with <code>commit</code>. Alternatively, you can stage and commit in one step with <code>commit -a</code></li>
+<li><code>push</code> to the remote repository. If there were changes made to it since your last <code>pull</code>, Git should inform you and prompt you to merge them.</li>
+</ol>
 
 </html>
